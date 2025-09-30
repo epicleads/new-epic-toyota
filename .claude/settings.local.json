@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run build:*)",
+      "Read(//c/Users/Admin/Downloads/Raam Group All websites/Raam-Group-Master-Code/admin/src/app/epicToyota/**)",
+      "Read(//c/Users/Admin/Downloads/Raam Group All websites/Raam-Group-Master-Code/admin/**)",
+      "Read(//c/Users/RaamGroup Digital/Documents/Downloads/raam group main/Raam-Group-Master-Code/Epic-Toyota--main/src/app/components/services/**)",
+      "Read(//c/Users/RaamGroup Digital/Documents/Downloads/raam group main/Raam-Group-Master-Code/Epic-Toyota--main/src/app/components/models/**)",
+      "WebSearch",
+      "Read(//c/Users/RaamGroup Digital/Documents/Downloads/raam group main/Raam-Group-Master-Code/Epic-Toyota--main/**)",
+      "Read(//c/Users/RaamGroup Digital/Documents/Downloads/raam group main/Raam-Group-Master-Code/raam-honda/src/app/components/homepage/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
