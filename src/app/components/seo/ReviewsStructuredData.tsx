@@ -12,21 +12,19 @@ interface ReviewsStructuredDataProps {
 }
 
 export default function ReviewsStructuredData({ reviews }: ReviewsStructuredDataProps) {
-  const aggregateRating = {
+  // AUTOMOTIVE DEALER REVIEWS - No Product Schema (Avoids Merchant Center Issues)
+  const automotiveDealerReviewsSchema = {
     "@context": "https://schema.org",
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": reviews.length + 250, // Include actual Google reviews count
-    "bestRating": "5",
-    "worstRating": "1"
-  };
-
-  const reviewsSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "AutomotiveDealer",
     "@id": `${BUSINESS_INFO.contact.website}#organization`,
     "name": BUSINESS_INFO.name,
-    "aggregateRating": aggregateRating,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": reviews.length + 250, // Include actual Google reviews count
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "review": reviews.map((review, index) => ({
       "@type": "Review",
       "@id": `${BUSINESS_INFO.contact.website}#review-${index}`,
@@ -42,65 +40,19 @@ export default function ReviewsStructuredData({ reviews }: ReviewsStructuredData
       },
       "reviewBody": review.review,
       "datePublished": review.date || new Date().toISOString().split('T')[0],
-      "publisher": {
-        "@type": "Organization",
-        "name": "Epic Toyota Chennai"
+      "itemReviewed": {
+        "@type": "AutomotiveDealer",
+        "name": BUSINESS_INFO.name
       }
-    }))
-  };
-
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `${BUSINESS_INFO.contact.website}#toyota-cars`,
-    "name": "Toyota Cars Chennai",
-    "description": "New Toyota vehicles including Innova Crysta, Fortuner, Camry, Vellfire and more from Epic Toyota Chennai",
-    "brand": {
-      "@type": "Brand",
-      "name": "Toyota"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "INR",
-      "lowPrice": "500000",
-      "highPrice": "8000000",
-      "availability": "https://schema.org/InStock",
-      "seller": {
-        "@id": `${BUSINESS_INFO.contact.website}#organization`
-      }
-    },
-    "aggregateRating": aggregateRating,
-    "review": reviews.map((review, index) => ({
-      "@type": "Review",
-      "@id": `${BUSINESS_INFO.contact.website}#product-review-${index}`,
-      "author": {
-        "@type": "Person",
-        "name": review.name
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": review.rating.toString(),
-        "bestRating": "5"
-      },
-      "reviewBody": review.review,
-      "datePublished": review.date || new Date().toISOString().split('T')[0]
     }))
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(reviewsSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema),
-        }}
-      />
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(automotiveDealerReviewsSchema),
+      }}
+    />
   );
 }

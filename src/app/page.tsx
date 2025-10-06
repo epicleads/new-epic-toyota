@@ -12,37 +12,58 @@ import Footer from "./components/Footer";
 import { BUSINESS_INFO } from "./lib/business-info";
 import Header from "./components/header";
 
-// Enhanced page metadata for Toyota Chennai domination
+// COMPREHENSIVE SEO - Dominate ALL Toyota searches in Chennai (Dealer, Showroom, Offers, Models)
 export const metadata: Metadata = {
-  title: "Epic Toyota Chennai - #1 Toyota Dealer Mount Road & Vyasarpadi | New Cars, Service, Parts",
-  description: "Epic Toyota Chennai - Premier authorized Toyota dealer serving Mount Road, Vyasarpadi & all Chennai. New Toyota cars, genuine service, spare parts & financing. Visit India's best Toyota showroom today!",
+  title: "Epic Toyota Chennai - #1 Authorized Dealer Mount Road & Vyasarpadi | Latest Offers 2025",
+  description: "Epic Toyota Chennai - Premier authorized Toyota showroom at Mount Road & Vyasarpadi. Latest offers on Innova Hycross, Fortuner, Glanza, Camry & all models. Best prices, exchange deals, low EMI. Book test drive today!",
   keywords: [
-    // Primary Chennai Toyota keywords
-    "Toyota Chennai", "Toyota dealer Chennai", "Toyota showroom Chennai",
-    "Toyota Mount Road", "Toyota Vyasarpadi", "Toyota T Nagar",
-    "Epic Toyota Chennai", "Toyota Anna Nagar", "Toyota Adyar",
-    
-    // Service keywords
-    "Toyota service Chennai", "Toyota spare parts Chennai", "Toyota maintenance Chennai",
-    "Toyota car loan Chennai", "Toyota insurance Chennai", "Toyota exchange Chennai",
-    
-    // Model specific keywords
-    "Innova Crysta Chennai", "Fortuner Chennai", "Camry Chennai", "Vellfire Chennai",
-    "Glanza Chennai", "Urban Cruiser Hyryder Chennai", "Hilux Chennai",
-    
-    // Buying intent keywords
-    "Buy Toyota Chennai", "New Toyota cars Chennai", "Toyota price Chennai",
-    "Best Toyota dealer Chennai", "Toyota offers Chennai", "Toyota booking Chennai",
-    
-    // Location specific
+    // PRIMARY DEALER/SHOWROOM KEYWORDS (Highest Search Volume)
+    "Toyota dealer Chennai", "Toyota showroom Chennai", "Authorized Toyota dealer Chennai",
+    "Epic Toyota Chennai", "Toyota Chennai", "Best Toyota dealer Chennai",
+    "Toyota Mount Road", "Toyota Vyasarpadi", "Toyota showroom near me",
+
+    // LOCATION-SPECIFIC DEALER SEARCHES
     "Toyota dealer Mount Road", "Toyota showroom Vyasarpadi", "Toyota T Nagar",
-    "Toyota dealer Anna Nagar", "Toyota showroom Adyar", "Toyota Velachery",
-    "Toyota OMR", "Toyota ECR", "Toyota IT Corridor"
+    "Toyota Anna Nagar", "Toyota Adyar", "Toyota Velachery", "Toyota OMR",
+    "Toyota ECR", "Toyota IT Corridor", "Toyota Porur", "Toyota Nungambakkam",
+
+    // OFFERS KEYWORDS (High Buying Intent)
+    "Toyota offers Chennai", "Latest Toyota offers Chennai", "Toyota discount Chennai",
+    "Toyota deals Chennai", "Best Toyota offers", "Toyota exchange offers Chennai",
+    "Toyota year end offers", "Toyota festival offers", "Toyota price Chennai",
+
+    // MODEL-SPECIFIC SEARCHES (People search by model)
+    "Innova Hycross Chennai", "Fortuner Chennai", "Glanza Chennai",
+    "Urban Cruiser Hyryder Chennai", "Innova Crysta Chennai", "Camry Chennai",
+    "Vellfire Chennai", "Hilux Chennai", "Land Cruiser Chennai",
+    "Rumion Chennai", "Taisor Chennai",
+
+    // BUYING INTENT KEYWORDS
+    "Buy Toyota Chennai", "New Toyota cars Chennai", "Toyota on road price Chennai",
+    "Toyota car price Chennai", "Book Toyota test drive Chennai",
+    "Toyota showroom timings Chennai", "Toyota contact number Chennai",
+
+    // SERVICE KEYWORDS (Bring people to showroom)
+    "Toyota service Chennai", "Toyota service center Chennai", "Toyota spare parts Chennai",
+    "Toyota maintenance Chennai", "Toyota car service Mount Road", "Toyota authorized service",
+
+    // FINANCIAL KEYWORDS
+    "Toyota loan Chennai", "Toyota EMI Chennai", "Toyota finance Chennai",
+    "Toyota car loan offers", "Toyota zero down payment", "Toyota low EMI",
+    "Toyota insurance Chennai", "Toyota extended warranty",
+
+    // EXCHANGE KEYWORDS
+    "Toyota exchange Chennai", "Old car exchange Toyota", "Toyota trade-in Chennai",
+    "Sell old car buy Toyota", "Toyota exchange offer Mount Road",
+
+    // COMPARISON SEARCHES
+    "Best Toyota showroom Chennai", "Toyota dealer near me", "Nearest Toyota showroom",
+    "Toyota authorized dealer list Chennai", "Official Toyota dealer Chennai"
   ].join(", "),
   
   openGraph: {
-    title: "Epic Toyota Chennai - #1 Toyota Dealer Mount Road & Vyasarpadi",
-    description: "Epic Toyota Chennai - Premier authorized Toyota dealer. New cars, service, parts & financing across Mount Road, Vyasarpadi & Chennai.",
+    title: "Epic Toyota Chennai - #1 Authorized Dealer | Latest Offers on All Models",
+    description: "Epic Toyota Chennai - Premier showroom at Mount Road & Vyasarpadi. Latest offers on Innova Hycross, Fortuner, Glanza & all models. Best prices, exchange deals, test drives.",
     url: BUSINESS_INFO.contact.website,
     siteName: BUSINESS_INFO.name,
     images: [
@@ -50,17 +71,17 @@ export const metadata: Metadata = {
         url: "/images/epic-toyota-chennai-showroom.jpg",
         width: 1200,
         height: 630,
-        alt: "Epic Toyota Chennai Showroom - Mount Road & Vyasarpadi",
+        alt: "Latest Toyota Offers Chennai 2025 - Epic Toyota Exclusive Deals",
       }
     ],
     locale: "en_IN",
     type: "website",
   },
-  
+
   twitter: {
     card: "summary_large_image",
-    title: "Epic Toyota Chennai - #1 Toyota Dealer Mount Road & Vyasarpadi",
-    description: "Epic Toyota Chennai - Premier authorized Toyota dealer. New cars, service, parts & financing.",
+    title: "Latest Toyota Offers Chennai 2025 | Epic Toyota Exclusive Deals",
+    description: "Best Toyota offers in Chennai! Year-end discounts, exchange deals, low EMI. Limited period offers.",
     images: ["/images/epic-toyota-chennai-showroom.jpg"],
   },
   
@@ -81,12 +102,16 @@ export const metadata: Metadata = {
 export default function HomePage() {  
   return (
     <>
-      {/* Hidden SEO Content for Enhanced Keyword Targeting */}
+      {/* Hidden SEO Content - OFFERS FOCUSED for Automotive Industry */}
       <div className="sr-only">
-        <h1>Epic Toyota Chennai - Premier Toyota Dealer Mount Road Vyasarpadi</h1>
-        <p>Epic Toyota Chennai is the leading authorized Toyota dealer serving Mount Road, Vyasarpadi, T Nagar, Anna Nagar, Adyar and entire Chennai metropolitan area. We offer new Toyota cars including Innova Crysta, Fortuner, Camry, Vellfire, Glanza, Urban Cruiser Hyryder with genuine Toyota service, spare parts, car loans, insurance and exchange offers.</p>
+        <h1>Latest Toyota Offers Chennai 2025 - Epic Toyota Exclusive Deals & Discounts</h1>
+        <p>Get the best Toyota offers in Chennai at Epic Toyota! We bring you exclusive year-end discounts, exchange offers, and special financing schemes on all Toyota models including Innova Hycross, Fortuner, Glanza, Urban Cruiser Hyryder, Innova Crysta, Camry, and more. Visit our showrooms at Mount Road and Vyasarpadi for limited period deals.</p>
+        <h2>Current Toyota Offers in Chennai</h2>
+        <p>Exclusive Toyota year-end offers Chennai, special exchange bonuses up to ₹50,000, low EMI starting from ₹9,999/month, zero down payment schemes, free accessories worth ₹25,000, extended warranty offers, corporate discounts, loyalty benefits for existing Toyota customers.</p>
+        <h2>Why Choose Epic Toyota for Best Offers?</h2>
+        <p>Authorized Toyota dealer Chennai, transparent pricing, genuine accessories, best exchange value, flexible financing options, doorstep delivery, 24/7 customer support, Mount Road and Vyasarpadi locations.</p>
         <div>
-          <span>Toyota showroom Chennai, Toyota dealer Mount Road, Toyota service center Vyasarpadi, Toyota spare parts T Nagar, Toyota car loan Anna Nagar, Toyota insurance Adyar, Toyota exchange Velachery, Toyota OMR, Toyota ECR, Toyota IT Corridor</span>
+          <span>Toyota offers Chennai, Toyota discount Chennai, Toyota deals Mount Road, Toyota exchange offers Vyasarpadi, best Toyota price Chennai, Toyota finance schemes, Toyota low EMI, Toyota year end sale, Toyota festival offers, Epic Toyota exclusive deals</span>
         </div>
       </div>
 
@@ -96,7 +121,83 @@ export default function HomePage() {
         itemType="https://schema.org/WebPage"
         className="relative"
       >
-        {/* Structured Data for Page Content */}
+        {/* Automotive Dealer Schema - LEAD GENERATION (No Product/Offer to avoid merchant issues) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AutomotiveDealer",
+              "@id": `${BUSINESS_INFO.contact.website}#maindealer`,
+              "name": BUSINESS_INFO.name,
+              "description": "Epic Toyota Chennai - Authorized Toyota dealer offering latest models, special offers, exchange deals, financing options, and expert service at Mount Road & Vyasarpadi locations",
+              "url": BUSINESS_INFO.contact.website,
+              "brand": {
+                "@type": "Brand",
+                "name": "Toyota"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Chennai",
+                  "containedInPlace": {
+                    "@type": "State",
+                    "name": "Tamil Nadu"
+                  }
+                }
+              ],
+              "makesOffer": [
+                {
+                  "@type": "Offer",
+                  "name": "Test Drive Booking",
+                  "description": "Book a free test drive for any Toyota model at Epic Toyota Chennai",
+                  "category": "Service",
+                  "availableAtOrFrom": {
+                    "@type": "Place",
+                    "name": "Epic Toyota Chennai Showrooms"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Vehicle Exchange Program",
+                  "description": "Exchange your old car for a new Toyota with attractive exchange bonuses",
+                  "category": "Service",
+                  "availableAtOrFrom": {
+                    "@type": "Place",
+                    "name": "Epic Toyota Chennai"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Financing Assistance",
+                  "description": "Flexible car loan options with competitive EMI schemes",
+                  "category": "Service",
+                  "availableAtOrFrom": {
+                    "@type": "Place",
+                    "name": "Epic Toyota Chennai"
+                  }
+                }
+              ],
+              "potentialAction": {
+                "@type": "ReserveAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": `${BUSINESS_INFO.contact.website}#contact`,
+                  "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                  ]
+                },
+                "result": {
+                  "@type": "Reservation",
+                  "name": "Test Drive Booking"
+                }
+              }
+            }),
+          }}
+        />
+
+        {/* WebPage Schema - INFORMATIONAL (No commercial product listing) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,21 +205,24 @@ export default function HomePage() {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "@id": `${BUSINESS_INFO.contact.website}#webpage`,
-              "name": "Epic Toyota Chennai - Toyota Dealer Mount Road & Vyasarpadi",
-              "description": "Epic Toyota Chennai homepage featuring new Toyota cars, service, spare parts, and financing solutions for Chennai customers.",
+              "name": "Epic Toyota Chennai - Authorized Toyota Dealer | Latest Offers 2025",
+              "description": "Epic Toyota Chennai - Premier authorized Toyota showroom at Mount Road & Vyasarpadi. Latest offers on Innova Hycross, Fortuner, Glanza, Camry & all models. Best prices, exchange deals, low EMI. Book test drive today!",
               "url": BUSINESS_INFO.contact.website,
               "inLanguage": "en-IN",
               "isPartOf": {
+                "@type": "WebSite",
                 "@id": `${BUSINESS_INFO.contact.website}#website`
               },
               "about": {
-                "@type": "Organization",
+                "@type": "AutomotiveDealer",
                 "@id": `${BUSINESS_INFO.contact.website}#organization`,
                 "name": BUSINESS_INFO.name
               },
-              "mainEntity": {
-                "@type": "AutomotiveDealer",
-                "@id": `${BUSINESS_INFO.contact.website}#organization`
+              "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": `${BUSINESS_INFO.contact.website}/images/epic-toyota-chennai-showroom.jpg`,
+                "width": 1200,
+                "height": 630
               },
               "breadcrumb": {
                 "@type": "BreadcrumbList",
@@ -131,86 +235,10 @@ export default function HomePage() {
                   }
                 ]
               },
-              "potentialAction": [
-                {
-                  "@type": "ReserveAction",
-                  "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": `${BUSINESS_INFO.contact.website}/ContactUs`,
-                    "actionPlatform": [
-                      "http://schema.org/DesktopWebPlatform",
-                      "http://schema.org/MobileWebPlatform"
-                    ]
-                  },
-                  "object": {
-                    "@type": "Product",
-                    "name": "Toyota Car Test Drive Chennai"
-                  }
-                },
-                {
-                  "@type": "SearchAction",
-                  "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": `${BUSINESS_INFO.contact.website}/search?q={search_term_string}`
-                  },
-                  "query-input": "required name=search_term_string"
-                }
-              ]
-            }),
-          }}
-        />
-
-        {/* Article Schema for SEO Content */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "@id": `${BUSINESS_INFO.contact.website}#homepage-article`,
-              "headline": "Epic Toyota Chennai - Premier Toyota Dealer Serving Mount Road, Vyasarpadi & All Chennai",
-              "description": "Discover Epic Toyota Chennai, the leading authorized Toyota dealer offering new cars, genuine service, spare parts and financing across Mount Road, Vyasarpadi and entire Chennai metro.",
-              "author": {
-                "@type": "Organization",
-                "@id": `${BUSINESS_INFO.contact.website}#organization`,
-                "name": BUSINESS_INFO.name
-              },
-              "publisher": {
-                "@type": "Organization",
-                "@id": `${BUSINESS_INFO.contact.website}#organization`,
-                "name": BUSINESS_INFO.name,
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": `${BUSINESS_INFO.contact.website}/images/epic-toyota-logo.png`
-                }
-              },
-              "datePublished": new Date().toISOString().split('T')[0],
-              "dateModified": new Date().toISOString().split('T')[0],
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": BUSINESS_INFO.contact.website
-              },
-              "image": {
-                "@type": "ImageObject",
-                "url": `${BUSINESS_INFO.contact.website}/images/epic-toyota-chennai-showroom.jpg`,
-                "width": 1200,
-                "height": 630
-              },
-              "keywords": "Toyota Chennai, Toyota dealer Chennai, Toyota Mount Road, Toyota Vyasarpadi, Epic Toyota, Toyota service Chennai, Toyota spare parts Chennai",
-              "about": [
-                {
-                  "@type": "Thing",
-                  "name": "Toyota Dealer Chennai"
-                },
-                {
-                  "@type": "Place", 
-                  "name": "Chennai, Tamil Nadu"
-                },
-                {
-                  "@type": "Brand",
-                  "name": "Toyota"
-                }
-              ]
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", "h2", ".description"]
+              }
             }),
           }}
         />
@@ -260,46 +288,46 @@ export default function HomePage() {
           }}
         />
 
-        {/* Main Content Sections with Enhanced SEO */}
+        {/* Main Content Sections - Semantic HTML (No Product microdata) */}
         <Header/>
-        <header itemScope itemType="https://schema.org/WPHeader" id="hero">
+        <header id="hero">
           <HeroServer />
         </header>
 
-        <section itemScope itemType="https://schema.org/PromotionalOffer" id="offers">
+        <section id="offers">
           <CountdownSection />
         </section>
 
-        <section itemScope itemType="https://schema.org/AboutPage" id="about">
-          <AboutSection />  
+        <section id="about">
+          <AboutSection />
         </section>
 
-        <section itemScope itemType="https://schema.org/Service" id="services">
+        <section id="services">
           <ServicesSection />
         </section>
 
-        <section itemScope itemType="https://schema.org/Review" id="testimonials">
+        <section id="testimonials">
           <TestimonialsSection />
         </section>
 
-        <section itemScope itemType="https://schema.org/Product" id="models">
+        <section id="models">
           <ToyotaFeaturedModels />
         </section>
 
-        <section itemScope itemType="https://schema.org/Organization" id="why-choose">
+        <section id="why-choose">
           <WhyBuySection />
         </section>
 
-        <section itemScope itemType="https://schema.org/Place" id="locations">
-          <LocationsSection />  
+        <section id="locations">
+          <LocationsSection />
         </section>
 
-        <section itemScope itemType="https://schema.org/ContactPage" id="contact">
+        <section id="contact">
           <FinalCTASection />
         </section>
 
-        <footer itemScope itemType="https://schema.org/WPFooter">
-          <Footer />  
+        <footer>
+          <Footer />
         </footer>
       </main>
     </>
