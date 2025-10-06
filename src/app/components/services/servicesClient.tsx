@@ -110,7 +110,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Desktop & Tablet Grid View - 4 cards in a row */}
-        <div className="hidden sm:grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
+        <div className="hidden sm:grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -123,15 +123,15 @@ export default function ServicesSection() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 hover:border-red-300/50 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-red-500/10 w-full max-w-[320px] flex flex-col"
+              className="group bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 hover:border-red-300/50 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-red-500/10 w-full flex flex-col"
             >
-              {/* Image Section - square aspect ratio for 1080x1080 images */}
-              <div className="relative w-full aspect-square overflow-hidden flex items-center justify-center bg-white">
+              {/* Image Section - reduced aspect ratio */}
+              <div className="relative w-full aspect-[4/3] overflow-hidden flex items-center justify-center bg-white">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-contain p-2 sm:p-3 transition-transform duration-700 ease-out"
+                  className="object-contain p-4 transition-transform duration-700 ease-out"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                 />
 
@@ -141,30 +141,25 @@ export default function ServicesSection() {
                 </div>
               </div>
 
-              {/* Content - flexible height with minimum space */}
-              <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                <div className="flex-grow">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-                </div>
+              {/* Content - compact */}
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-grow">
+                  {service.description}
+                </p>
 
-                <div className="space-y-3 mt-auto">
-                  {/* Contextual CTA per service */}
-                  <button
-                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-colors duration-300 shadow-md hover:shadow-lg"
-                    onClick={() => setShowForm(true)}
-                  >
-                    {service.title.toLowerCase().includes('test drive') ? 'Book Test Drive'
-                      : service.title.toLowerCase().includes('buy') ? 'Buy Now'
-                      : service.title.toLowerCase().includes('service') ? 'Book Service'
-                      : 'Upgrade Now'}
-                  </button>
-
-                </div>
+                {/* Contextual CTA per service */}
+                <button
+                  className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors duration-300 shadow-md hover:shadow-lg"
+                  onClick={() => setShowForm(true)}
+                >
+                  {service.title.toLowerCase().includes('test drive') ? 'Book Test Drive'
+                    : service.title.toLowerCase().includes('buy') ? 'Buy Now'
+                    : service.title.toLowerCase().includes('service') ? 'Book Service'
+                    : 'Upgrade Now'}
+                </button>
               </div>
             </motion.div>
           ))}

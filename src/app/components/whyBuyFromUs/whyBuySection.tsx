@@ -190,23 +190,6 @@ export default function WhyBuySection() {
               </AnimatePresence>
             </div>
 
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:border-red-300 hover:bg-red-50 transition-all duration-300 shadow-md z-20"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-5 h-5 text-gray-600 hover:text-red-600 transition-colors" />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full flex items-center justify-center hover:border-red-300 hover:bg-red-50 transition-all duration-300 shadow-md z-20"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-5 h-5 text-gray-600 hover:text-red-600 transition-colors" />
-            </button>
-
             {/* Slide Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {usps.map((_, index) => (

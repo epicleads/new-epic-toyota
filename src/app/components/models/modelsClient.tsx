@@ -12,6 +12,7 @@ import {
   Calculator
 } from 'lucide-react';
 import EmiCalculator from './EmiCalculator';
+import LeadForm from '../LeadForm';
 
 interface ToyotaModel {
   id: number;
@@ -182,8 +183,7 @@ const ToyotaFeaturedModels: React.FC = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [currentSpecIndex, setCurrentSpecIndex] = useState(0);
-  const [, setIsScheduleOpen] = useState(false);
-  const [, setScheduleModel] = useState<ToyotaModel | null>(null);
+  const [showLeadForm, setShowLeadForm] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [showEmiCalculator, setShowEmiCalculator] = useState(false);
 
@@ -338,9 +338,26 @@ const ToyotaFeaturedModels: React.FC = () => {
   }
 
   return (
-    <section className="bg-white w-full py-12 md:py-16 font-manrope relative overflow-hidden">
+    <section className="bg-white w-full py-12 md:py-16 font-manrope relative" style={{ position: 'relative' }}>
 
-      <div 
+      {/* Navigation Arrows - Absolute at Viewport Edges, only in models section */}
+      <button
+        onClick={() => navigateModel('prev')}
+        className="hidden lg:flex absolute left-0 top-[60%] -translate-y-1/2 w-14 h-14 bg-black items-center justify-center hover:bg-gray-900 transition-all duration-300 group z-[100]"
+        style={{ position: 'absolute' }}
+      >
+        <ChevronLeft className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+      </button>
+
+      <button
+        onClick={() => navigateModel('next')}
+        className="hidden lg:flex absolute right-0 top-[60%] -translate-y-1/2 w-14 h-14 bg-black items-center justify-center hover:bg-gray-900 transition-all duration-300 group z-[100]"
+        style={{ position: 'absolute' }}
+      >
+        <ChevronRight className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+      </button>
+
+      <div
         className="relative z-10 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 font-manrope featured-container-responsive"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -530,7 +547,7 @@ const ToyotaFeaturedModels: React.FC = () => {
           >
             <div className="hidden lg:block relative">
               <div
-                className="relative aspect-[4/3]"
+                className="relative aspect-[4/3] scale-110"
                 onTouchStart={onTouchStart}
                 onTouchMove={onTouchMove}
                 onTouchEnd={onTouchEnd}
@@ -556,32 +573,19 @@ const ToyotaFeaturedModels: React.FC = () => {
                 </AnimatePresence>
               </div>
 
-              {/* Navigation Arrows - Desktop */}
-              <button
-                onClick={() => navigateModel('prev')}
-                className="hidden lg:flex absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm items-center justify-center hover:bg-white hover:shadow-lg transition-all duration-500 ease-out group z-10"
-              >
-                <ChevronLeft className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
-              </button>
             </div>
           </motion.div>
 
           {/* Model Details */}
           <motion.div
-            className="order-1 lg:order-2 h-full flex flex-col justify-between relative"
+            className="order-1 lg:order-2 h-full flex flex-col relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <button
-              onClick={() => navigateModel('next')}
-              className="hidden lg:flex absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-sm items-center justify-center hover:bg-white hover:shadow-lg transition-all duration-500 ease-out group z-10"
-            >
-              <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
-            </button>
-            
+
             {/* Top Section - Title & Info */}
-            <div className="space-y-2">
+            <div className="space-y-4 mb-6">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={selectedModel}
@@ -589,9 +593,9 @@ const ToyotaFeaturedModels: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-2"
+                  className="space-y-3"
                 >
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 tracking-tight font-manrope">
                       Toyota {currentModel.name}
                     </h2>
@@ -601,7 +605,7 @@ const ToyotaFeaturedModels: React.FC = () => {
 
               {/* Price Section */}
               <motion.div
-                className="space-y-1"
+                className="space-y-2 pb-4 border-b border-gray-200"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -625,10 +629,10 @@ const ToyotaFeaturedModels: React.FC = () => {
             </div>
 
             {/* Middle Section - Description & Specs */}
-            <div className="space-y-3">
-             
+            <div className="space-y-4">
+
               {/* Specifications Grid - Desktop */}
-              <div className="hidden md:grid grid-cols-3 gap-3 mt-0">
+              <div className="hidden md:grid grid-cols-3 gap-3">
                 {[
                   { icon: Fuel, label: 'Fuel Type', value: currentModel.fuelType, clickable: false },
                   { icon: Settings, label: 'Transmission', value: currentModel.transmission, clickable: false },
@@ -639,7 +643,7 @@ const ToyotaFeaturedModels: React.FC = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 + index * 0.1 }}
-                    className={`bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-3 text-center transition-all duration-300 shadow-sm ${
+                    className={`bg-gray-50 backdrop-blur-sm border border-gray-200 rounded-xl p-4 text-center transition-all duration-300 shadow-sm ${
                       spec.clickable
                         ? 'cursor-pointer hover:border-red-400 hover:bg-gradient-to-br hover:from-red-50 hover:to-red-100 hover:shadow-lg hover:scale-105 active:scale-95'
                         : 'hover:border-red-300 hover:bg-gray-100 hover:shadow-md'
@@ -705,58 +709,73 @@ const ToyotaFeaturedModels: React.FC = () => {
             </div>
 
             {/* Desktop CTA Buttons */}
-            <div className="hidden md:flex flex-row gap-6 mt-2 mb-1 justify-center">
-             
+            <div className="hidden md:flex flex-row gap-4 mt-6">
                <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                 className="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-gray-300 text-gray-700 text-sm hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all duration-300 font-manrope shadow-sm hover:shadow-md min-w-[240px]"
-                onClick={() => {
-                  setIsScheduleOpen(true);
-                  setScheduleModel(currentModel);
-                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-xl font-bold text-base hover:from-red-700 hover:to-red-800 transition-all duration-300 font-manrope shadow-lg hover:shadow-xl"
+                onClick={() => setShowLeadForm(true)}
               >
                 Book Test Drive
               </motion.button>
             </div>
 
             {/* Mobile CTA Buttons */}
-            <div className="md:hidden flex-row flex gap-6 mt-6 justify-center">
+            <div className="md:hidden flex-col flex gap-3 mt-6">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-2 rounded-lg font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-red-600/25 font-manrope"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3.5 rounded-xl font-bold text-base hover:from-red-700 hover:to-red-800 transition-all duration-300 font-manrope shadow-lg hover:shadow-xl"
+                onClick={() => setShowLeadForm(true)}
+              >
+                Book Test Drive
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full border-2 border-gray-300 text-gray-700 px-6 py-3.5 rounded-xl font-semibold text-base hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all duration-300 font-manrope"
                 onClick={() => {
                   if (typeof window !== 'undefined') {
                     window.location.href = '/models';
                   }
                 }}
               >
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  View All Models
-                  <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </motion.button>
-               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                 className="inline-flex items-center justify-center px-8 py-3 rounded-xl border border-gray-300 text-gray-700 text-sm hover:border-red-500 hover:bg-red-50 hover:text-red-600 transition-all duration-300 font-manrope shadow-sm hover:shadow-md min-w-[220px]"
-                onClick={() => {
-                  setIsScheduleOpen(true);
-                  setScheduleModel(currentModel);
-                }}
-              >
-                Book Test Drive
+                View All Models
               </motion.button>
             </div>
           </motion.div>
           </div>
         </div>
 
-
-        {/* Schedule Demo Modal */}
-
       </div>
+
+      {/* Lead Form Modal */}
+      <AnimatePresence>
+        {showLeadForm && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-[200]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-lg"
+            >
+              <button
+                onClick={() => setShowLeadForm(false)}
+                className="absolute -top-4 -right-4 w-10 h-10 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg"
+              >
+                ✕
+              </button>
+              <LeadForm
+                buttonLabel="Book Test Drive"
+                onSuccess={() => {
+                  setTimeout(() => setShowLeadForm(false), 2000);
+                }}
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* EMI Calculator Modal */}
       <AnimatePresence>

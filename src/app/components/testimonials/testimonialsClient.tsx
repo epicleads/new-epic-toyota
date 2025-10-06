@@ -218,7 +218,7 @@ export default function TestimonialsSection() {
   return (
     <>
       <ReviewsStructuredData reviews={reviews} />
-      <section 
+      <section
         className="w-full bg-white text-black py-16 md:py-20 relative overflow-hidden font-manrope"
         itemScope
         itemType="https://schema.org/Organization"
@@ -236,7 +236,7 @@ export default function TestimonialsSection() {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-600/30 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-600/30 to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="w-full relative">
           {/* Section Heading - Toyota OEM Style */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -275,10 +275,9 @@ export default function TestimonialsSection() {
             )}
 
             {/* Auto-Scrolling Image Carousel */}
-            <div className="relative overflow-hidden mb-8">
+            <div className="relative overflow-hidden mb-8 ml-auto">
               {/* Gradient Overlays */}
               <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
               {/* Scrolling Container */}
               <div
@@ -290,7 +289,7 @@ export default function TestimonialsSection() {
               >
                 <div
                   ref={scrollRef}
-                  className="flex gap-6 pb-4 cursor-pointer select-none"
+                  className="flex gap-6 pb-4 cursor-pointer select-none pr-0"
                   style={{
                     touchAction: 'pan-x',
                     willChange: 'transform',
