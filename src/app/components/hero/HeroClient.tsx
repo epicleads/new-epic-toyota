@@ -54,7 +54,7 @@ export default function HeroClient({ bannerData }: HeroClientProps) {
   const currentImage = isMobile ? bannerData.mobile_image : bannerData.desktop_image;
 
   return (
-    <section className="relative h-screen overflow-hidden bg-white">
+    <section className="relative h-screen overflow-hidden bg-white pt-16">
      
 
       {/* Rest of your component remains the same... */}
@@ -130,11 +130,11 @@ export default function HeroClient({ bannerData }: HeroClientProps) {
           <button
             type="button"
             onClick={() => setShowLeadForm(true)}
-            className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/20 border border-red-500/30"
+            className="group inline-flex items-center px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-base rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/20 border border-red-500/30 whitespace-nowrap"
           >
             <span className="mr-2">{bannerData.cta_text}</span>
             <svg
-              className="w-6 h-6 transform group-hover:translate-x-1 transition-transform duration-300"
+              className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

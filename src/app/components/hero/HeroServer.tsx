@@ -88,7 +88,7 @@ export default async function HeroServer() {
   const defaultBanner = {
     desktop_image: '/assets/epictoyotahero.jpg',
     mobile_image: '/assets/epictoyotahero.jpg',
-    cta_text: 'Discover Epic Toyota',
+    cta_text: 'Book Now',
     cta_link: '/vehicles',
     
   };

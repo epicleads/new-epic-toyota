@@ -1,6 +1,6 @@
 export const BUSINESS_INFO = {
   // Core Business Details
-  name: "Epic Toyota - Raam Group",
+  name: "Epic Toyota",
   legalName: "Epic Toyota Chennai Showroom",
   description: "Premier Toyota dealership in Chennai offering new Toyota cars, genuine spare parts, professional service, and comprehensive financing solutions. Authorized Toyota dealer serving Mount Road, Vyasarpadi, and all of Chennai.",
   
@@ -20,8 +20,8 @@ export const BUSINESS_INFO = {
         longitude: "80.2707",
         accuracy: "ROOFTOP" // Precise building level accuracy
       },
-      phone: "+91-44-2851-XXXX", // Update with actual number
-      email: "mountroad@epictoyota.com",
+      phone: "+919500007575",
+      email: "support@epictoyota.co.in",
       landmarks: ["Spencer Plaza", "Thousand Lights", "Anna Salai", "T Nagar"],
       areasCovered: ["Mount Road", "T Nagar", "Thousand Lights", "Teynampet", "Anna Nagar East"]
     },
@@ -39,8 +39,8 @@ export const BUSINESS_INFO = {
         longitude: "80.2897",
         accuracy: "ROOFTOP" // Precise building level accuracy
       },
-      phone: "+91-44-2661-YYYY", // Update with actual number
-      email: "vyasarpadi@epictoyota.com",
+      phone: "+919500007575",
+      email: "support@epictoyota.co.in",
       landmarks: ["Vyasarpadi Industrial Estate", "Perambur", "Korattur", "Red Hills Road"],
       areasCovered: ["Vyasarpadi", "Perambur", "Korattur", "Madhavaram", "Red Hills", "Puzhal"]
     }
@@ -48,8 +48,8 @@ export const BUSINESS_INFO = {
 
   // Contact Information
   contact: {
-    phone: "+91-44-2XXX-XXXX", // Primary business number
-    email: "info@epictoyota.com",
+    phone: "+919500007575", // Primary business number
+    email: "support@epictoyota.co.in",
     website: "https://epictoyota.in",
     supportHours: "9:00 AM - 7:00 PM (Mon-Sat), 10:00 AM - 6:00 PM (Sun)"
   },
@@ -135,7 +135,7 @@ export const BUSINESS_INFO = {
 
   // Brand Information
   brand: {
-    logo: "/images/epic-toyota-logo.png",
+    logo: "/assets/toyota_logo",
     favicon: "/favicon.ico",
     colors: {
       primary: "#EB0A1E", // Toyota Red

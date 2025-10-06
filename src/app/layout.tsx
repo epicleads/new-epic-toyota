@@ -39,10 +39,16 @@ export const metadata: Metadata = {
   authors: [{ name: META_DEFAULTS.author }],
   creator: META_DEFAULTS.author,
   publisher: META_DEFAULTS.author,
-  
+
   metadataBase: new URL(META_DEFAULTS.siteUrl),
   alternates: {
     canonical: "/",
+  },
+
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
   
   robots: {
