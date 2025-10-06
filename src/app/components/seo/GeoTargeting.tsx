@@ -31,7 +31,7 @@ export default function GeoTargeting() {
     }
   }));
 
-  // Enhanced LocalBusiness with multiple service areas
+  // Enhanced LocalBusiness with multiple service areas (GOOGLE COMPLIANT - has required address field)
   const enhancedLocalBusiness = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "AutomotiveDealer"],
@@ -39,8 +39,18 @@ export default function GeoTargeting() {
     "name": BUSINESS_INFO.name,
     "description": BUSINESS_INFO.description,
     "url": BUSINESS_INFO.contact.website,
-    
-    // Multiple precise locations
+
+    // REQUIRED: Primary address field for LocalBusiness
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS_INFO.locations.mountRoad.address.streetAddress,
+      "addressLocality": BUSINESS_INFO.locations.mountRoad.address.addressLocality,
+      "addressRegion": BUSINESS_INFO.locations.mountRoad.address.addressRegion,
+      "postalCode": BUSINESS_INFO.locations.mountRoad.address.postalCode,
+      "addressCountry": BUSINESS_INFO.locations.mountRoad.address.addressCountry
+    },
+
+    // Multiple precise locations (additional branches)
     "location": [
       {
         "@type": "Place",
@@ -69,7 +79,7 @@ export default function GeoTargeting() {
         "@id": `${BUSINESS_INFO.contact.website}#vyasarpadi-precise`,
         "name": BUSINESS_INFO.locations.vyasarpadi.name,
         "address": {
-          "@type": "PostalAddress", 
+          "@type": "PostalAddress",
           "streetAddress": BUSINESS_INFO.locations.vyasarpadi.address.streetAddress,
           "addressLocality": BUSINESS_INFO.locations.vyasarpadi.address.addressLocality,
           "addressRegion": BUSINESS_INFO.locations.vyasarpadi.address.addressRegion,
@@ -87,7 +97,7 @@ export default function GeoTargeting() {
         }))
       }
     ],
-    
+
     // Service areas coverage
     "areaServed": BUSINESS_INFO.serviceAreas.map(area => ({
       "@type": "GeoCircle",
@@ -101,7 +111,7 @@ export default function GeoTargeting() {
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Chennai",
-        "addressRegion": "Tamil Nadu", 
+        "addressRegion": "Tamil Nadu",
         "addressCountry": "IN"
       }
     })),
@@ -109,10 +119,10 @@ export default function GeoTargeting() {
     // Enhanced contact info
     "telephone": BUSINESS_INFO.contact.phone,
     "email": BUSINESS_INFO.contact.email,
-    
+
     // Brand and parent organization
     "brand": {
-      "@type": "Brand", 
+      "@type": "Brand",
       "name": "Toyota"
     },
     "parentOrganization": {

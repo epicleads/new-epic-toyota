@@ -6,26 +6,45 @@ This is an **AUTOMOTIVE OFFERS LANDING PAGE** - NOT an e-commerce site. We're pr
 
 ---
 
-## ✅ **IMPLEMENTED - Technical SEO (Offers-Focused)**
+## ✅ **IMPLEMENTED - Technical SEO (Google Search Console Compliant)**
 
 ### 🔧 **Page Optimization**
-- ✅ Title: "Latest Toyota Offers Chennai 2025 | Exclusive Deals, Discounts & Exchange"
-- ✅ Description: Offers-focused with urgency (year-end, limited period, exclusive)
-- ✅ Keywords: 40+ high-intent offer keywords (not generic dealer keywords)
-- ✅ Structured Data: `OfferCatalog` schema (automotive industry standard)
-- ✅ Hidden SEO Content: H1/H2 focused on "offers" and "deals"
+- ✅ Title: "Epic Toyota Chennai - #1 Authorized Dealer Mount Road & Vyasarpadi | Latest Offers 2025"
+- ✅ Description: Dealer + Showroom + Offers focus (comprehensive search coverage)
+- ✅ Keywords: 60+ keywords (dealer, showroom, offers, models, service, financial, exchange)
+- ✅ Structured Data: `AutomotiveDealer` schema (LEAD GENERATION - not e-commerce)
+- ✅ Hidden SEO Content: H1/H2 focused on offers while maintaining dealer authority
 
-### 📊 **Schema Markup (Automotive Industry Compliant)**
+### 📊 **Schema Markup (Google Ads & Search Console Compliant)**
+
+**🚨 IMPORTANT: NO PRODUCT SCHEMAS** - Avoids Merchant Center requirements
+
 ```json
 {
-  "@type": "OfferCatalog" - Shows this is an offers page
-  "itemListElement": [
-    Offer schemas for each Toyota model
-    Car schemas with brand and availability
-    AutomotiveDealer as provider
-  ]
+  "@type": "AutomotiveDealer" - Lead generation business (NOT product store)
+  "makesOffer": [
+    Service-based offers (Test Drive, Exchange, Financing)
+    NO product prices (avoids merchant feed errors)
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction" - Lead generation (NOT BuyAction)
+  }
 }
 ```
+
+**✅ What We Use**:
+- AutomotiveDealer (main business entity)
+- LocalBusiness (local SEO)
+- WebPage (informational content)
+- Review on AutomotiveDealer (NOT on Product)
+- Service-based Offers (no product pricing)
+
+**❌ What We DON'T Use** (Triggers Merchant Issues):
+- Product schema
+- AggregateOffer with pricing
+- OfferCatalog with car items
+- itemScope="Product" microdata
+- Review on Product
 
 ---
 
@@ -424,16 +443,31 @@ Month 3: 300+ test drive bookings
 
 ## ✅ **IMMEDIATE ACTION ITEMS**
 
-1. ✅ Update page metadata (DONE)
-2. ✅ Add OfferCatalog schema (DONE)
-3. ✅ Optimize hidden SEO content (DONE)
-4. 🔲 Create Google Business Profile posts
-5. 🔲 Write first blog post on offers
-6. 🔲 Set up Google Search Console
-7. 🔲 Add FAQ section on offers
-8. 🔲 Create WhatsApp Business catalog
-9. 🔲 Design "Limited Period" badges
-10. 🔲 Get 10 reviews mentioning offers
+### ✅ COMPLETED - Google Compliance
+1. ✅ Update page metadata for comprehensive search coverage (DONE)
+2. ✅ Remove Product/OfferCatalog schemas to avoid merchant errors (DONE)
+3. ✅ Implement AutomotiveDealer schema for lead generation (DONE)
+4. ✅ Fix Review schemas - attached to AutomotiveDealer only (DONE)
+5. ✅ Remove all Product microdata from HTML (DONE)
+6. ✅ Create Google Search Console compliance documentation (DONE)
+
+### 🔲 PENDING - Marketing & Content
+7. 🔲 Set up Google Search Console and submit sitemap
+8. 🔲 Verify structured data with Rich Results Test
+9. 🔲 Create Google Business Profile posts (weekly schedule)
+10. 🔲 Write first blog post on offers
+11. 🔲 Add FAQ section on offers page
+12. 🔲 Create WhatsApp Business catalog
+13. 🔲 Design "Limited Period" badges
+14. 🔲 Get 10 reviews mentioning offers and showroom experience
+
+### 🎯 Google Search Console Setup (Priority)
+1. Add property: `https://epictoyota.co.in`
+2. Verify ownership (HTML tag method recommended)
+3. Submit sitemap
+4. Test rich results: https://search.google.com/test/rich-results
+5. Expected results: AutomotiveDealer, LocalBusiness, FAQPage valid
+6. Expected NO errors: Product, Merchant, Shopping feed warnings
 
 ---
 
